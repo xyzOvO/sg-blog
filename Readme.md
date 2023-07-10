@@ -2,11 +2,9 @@
 
 ## 1.介绍
 
-* 纯后端讲解
 * 完整的前台后台代码编写
 * 主流技术栈（SpringBoot,MybatisPlus,SpringSecurity,EasyExcel,Swagger2,Redis,Echarts,Vue,ElementUI....）
 * 完善细致的需求分析
-* 由易到难循序渐进
 
 
 
