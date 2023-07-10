@@ -11,12 +11,16 @@ import com.qiniu.util.Auth;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Component;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 @SpringBootTest(classes = SanGengBlogApplication.class)
 @ConfigurationProperties(prefix = "oss")
+@Component
 public class OSSTest {
+
 
     private String accessKey;
     private String secretKey;
@@ -42,19 +46,19 @@ public class OSSTest {
 
         UploadManager uploadManager = new UploadManager(cfg);
         //...生成上传凭证，然后准备上传
-//        String accessKey = "your access key";
-//        String secretKey = "your secret key";
-//        String bucket = "sg-blog";
+        String accessKey = "65nR5ZLqcCvRCnRkX5IjTFrLpWWMljyorzyIeU9r";
+        String secretKey = "MEeDOA6JkYuH0ci39YuMHF6g8PZVpmxRAQl2G9in";
+        String bucket = "xyz-2001";
 
         //默认不指定key的情况下，以文件内容的hash值作为文件名
-        String key = "2022/sg.png";
+        String key = "2023/xyz.png";
 
         try {
 //            byte[] uploadBytes = "hello qiniu cloud".getBytes("utf-8");
 //            ByteArrayInputStream byteInputStream=new ByteArrayInputStream(uploadBytes);
 
 
-            InputStream inputStream = new FileInputStream("C:\\Users\\root\\Desktop\\Snipaste_2022-02-28_22-48-37.png");
+            InputStream inputStream = new FileInputStream("C:\\Users\\古井枯塘\\Desktop\\tou.png");
             Auth auth = Auth.create(accessKey, secretKey);
             String upToken = auth.uploadToken(bucket);
 
